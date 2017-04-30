@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Selectors</title>
+<style>
+/*CSS Selectors*/
+
+/*element*/
+h2 {
+    color: red;
+    text-align: center;
+}
+
+/*class*/
+.highlight {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    background-color: green;
+    opacity: .6;
+}
+
+/*ID selector*/
+#mainPoint {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: red;
+    opacity: .7;
+}
+
+/*Style for multiple elements*/
+p, h1 {
+    color: blue;
+    text-align: center;
+}
+
+/*Element with class*/
+p.elemWithClass {
+    color: red;
+    background-color: blue;
+    text-align: left;
+}
+
+/*Child selector (Child paragraph of an article)*/
+article > .child {
+    color: grey;
+}
+
+#section h4 {
+    color: white;
+    background-color: red;
+}
+
+.child.new {
+    font-style: italic;
+}
+
+</style>
+</head>
+<body>
+    <h1>Selectors</h1>
+    <h2>Subheading 1</h2>
+    <p class="highlight">CSS works by associating rules with HTML elements.
+        These rules govern how the content of specified elements should be displayed.
+        A CSS rule contains two parts: a selector and a declaration.
+    </p>
+    <p class="highlight">Another paragraph.</p>
+    <h2>Subheading 2</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+    <div>This is the main point of the article. Attribute
+        <span id="mainPoint">ID mainpoint</span>
+    </div>
+
+    <hr>
+
+    <p class="elemWithClass"> Element with class selector</p>
+
+    <hr>
+
+    <article>
+        <h3>Child selector</h3>
+        <div class="child">This paragraph is child of an article</div>
+        <div>
+            <div class="child new">Not a direct child of article.</div>
+        </div>
+    </article>
+
+    <hr>
+
+    <div id="section">
+        <h3>Descendent selector</h3>
+        <h4>This paragraph is child and descendent of a section</h4>
+        <div>
+            <h4>Not a direct child of section, but descendent.</h4>
+        </div>
+    </div>
+</body>
+</html>
