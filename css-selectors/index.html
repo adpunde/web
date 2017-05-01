@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>CSS Selectors</title>
+<link href="style.css" type="text/css" rel="stylesheet" />
 <style>
 /*CSS Selectors*/
 
@@ -42,22 +43,66 @@ p.elemWithClass {
     text-align: left;
 }
 
-/*Child selector (Child paragraph of an article)*/
+/*Child selector (Child with class 'child' of an article)*/
 article > .child {
     color: grey;
 }
 
+/*h4 descendent of ID section*/
 #section h4 {
     color: white;
     background-color: red;
 }
 
+/*Class child and class new*/
 .child.new {
     font-style: italic;
 }
 
+/*Remove bullets*/
+header li {
+    list-style: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    background-color: green;
+    border: 1px solid blue;
+    color: black;
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+a:hover, a:active {
+    background-color: red;
+    color: white;
+}
+
+/*3rd item in the list*/
+header li:nth-child(3) {
+    font-size: 24px;
+}
+
+/*all odd div items */
+section div:nth-child(odd) {
+    background-color: gray;
+}
+
+section div:nth-child(even):hover {
+    background-color: red;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+section:hover div:nth-child(2) {
+    background-color: blue;
+}
+
 </style>
 </head>
+
 <body>
     <h1>Selectors</h1>
     <h2>Subheading 1</h2>
@@ -93,8 +138,35 @@ article > .child {
         <h3>Descendent selector</h3>
         <h4>This paragraph is child and descendent of a section</h4>
         <div>
-            <h4>Not a direct child of section, but descendent.</h4>
+            <!-- Inline styling -->
+            <h4 style="text-decoration:underline;">
+                Not a direct child of section, but descendent.
+            </h4>
         </div>
     </div>
+
+    <hr>
+
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="http://www.google.co.in">Google</a></li>
+            <li><a href="http://www.facebook.com">Facebook</a></li>
+        </ul>
+    </header>
+
+    <hr>
+
+    <section>
+        <div>DIV1</div>
+        <div>DIV2</div>
+        <div>DIV3</div>
+        <div>DIV4</div>
+        <div>DIV5</div>
+        <div>DIV6</div>
+        <div>DIV7</div>
+        <div>DIV8</div>
+        <div>DIV9</div>
+    </section>
 </body>
 </html>

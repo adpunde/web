@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Selectors</title>
+<style>
+.style {
+    font-family: Helvetica, Times New Roman;
+    color: #1024e3;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-align: center;
+}
+div {
+    font-size: 150%;
+}
+</style>
+</head>
+
+<body>
+    <p class="style">This is paragraph1.</p>
+    <div>
+        <p>This is paragraph2.</p>
+        <div style="font-size: 2em;">
+            <p>This is paragraph3 2em.</p>
+            <div style="font-size: 2em;">
+                <p>This is paragraph4. additional 2em</p>
+                <p style="font-size: 0.5em">This is paragraph5. Back to 2em.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
