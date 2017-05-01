@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Selectors</title>
+<style>
+* {
+    /* Star selector applices the property to all elements
+    Normal width specifies width of the content.
+    This option sets the given width as the total width of the box. */
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+#box {
+    background-color: blue;
+    padding: 10px;
+    border: 3px solid red;
+    margin: 20px;
+    width: 300px;
+}
+
+#content {
+    background-color: #90EE90;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+h2 {
+    margin-top: 30px;
+}
+
+#smallbox {
+    margin: 10px;
+    border: 4px solid black;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: green;
+    /*Avoid text overflow*/
+    overflow: auto;
+}
+
+#bg {
+    width: 500px;
+    height: 300px;
+    background-color: blue;
+    background-image: url("camelcart.jpg");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+</style>
+</head>
+
+<body>
+
+    <h1>Box Model</h1>
+    <h2>Top and bottom margins overlap</h2>
+    <div id="box">
+        <div id="content">
+            This is the main content of the body.
+        </div>
+    </div>
+    <div id="smallbox">
+        Some random text so that the box overflows/spills over.
+        sdfjsdf adfkj lskdfj
+        df asdkfjsa; jas;dflk jasd;fl kj
+        sadfkjawoijawl;fkawsdfg;jlsakjgf;asgfas
+        laksdjf;aosdgias;ldkgjsa;ldf
+    </div>
+    <div>
+        The 3rd DIV element to check spilling of earlier DIV.
+    </div>
+
+    <div id="bg">
+        Background text.
+    </div>
+
+</body>
+</html>
