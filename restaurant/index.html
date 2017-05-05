@@ -6,11 +6,74 @@
     <title>David Chu's China Bistros</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/style.css" type="text/css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 </head>
 
 <body>
-    Hello World!
+    <header>
+        <nav id="header-nav" class="navbar navbar-default">
+            <!-- container-fluid stretches entire browser width, not required -->
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="pull-left visible-md visible-lg visible-sm">
+                        <div id="logo-img" alt="Logo Image"></div>
+                    </a>
+
+                    <div class="navbar-brand">
+                        <a href="index.html"><h1>David Chu's China Bistros</h1></a>
+                        <p>
+                            <img src="images/star-k-logo.png" alt="Kosher certification">
+                            <span>Kosher Certified</span>
+                        </p>
+                    </div>
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#collapsable-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div id="collapsable-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="menu-categories.html">
+                                <span class="glyphicon glyphicon-cutlery"></span>
+                                <br class="hidden-xs">
+                                Menu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                                <br class="hidden-xs">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-certificate"></span>
+                                <br class="hidden-xs">
+                                Awards
+                            </a>
+                        </li>
+                        <li id="phone" class="hidden-xs">
+                            <a href="tel:410-602-5008">
+                                <span>410-602-5008</span>
+                            </a>
+                            <div>* We Deliver</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
