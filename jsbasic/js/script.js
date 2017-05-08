@@ -90,9 +90,13 @@ function loops() {
         console.log('i = ', i);
     }
 
-    var array = ['A', 'B', 'C'];
-    for (a in array) {
-        console.log("Item " + a, ": ", array[a]);
+    var obj = {
+        name: 'Coursera',
+        topic: 'HTML',
+        website: 'http://coursera.org'
+    };
+    for (prop in obj) {
+        console.log("Prop " + prop, ": ", obj[prop]);
     }
 }
 
@@ -215,3 +219,65 @@ function prototype() {
 }
 
 prototype();
+
+function arrays() {
+    var array = new Array();
+    array[0] = 1;
+    array[1] = 'Hello world !';
+    array[2] = function (name) {
+        console.log('Hello ' + name);
+    }
+    array[3] = {
+        course: 'HTML, CSS and JS'
+    };
+    console.log(array);
+    array[2]('world !');
+
+    var fruits = [];
+    fruits.push('Mango');
+    fruits.push('Apple');
+    fruits.push('Pomengranate');
+    fruits[6] = 'Grapes';
+    for (var i = 0; i < fruits.length; i++) {
+        console.log("Fruit ", i, " : ", fruits[i]);
+    }
+
+    var array = ['A', 'B', 'C'];
+    for (a in array) {
+        console.log("Item " + a, ": ", array[a]);
+    }
+};
+
+arrays();
+
+function closure() {
+    function MultiplyFactory(multiplier) {
+        return (
+            function (x) {
+                return multiplier * x;
+            }
+        );
+    };
+
+    var doubleAll = MultiplyFactory(2);
+    console.log(doubleAll);
+
+    // The variable multiplier is stored in outer scope of doubleALl.
+    // Javascript stores it along with the anonymous function that is returned.
+    // This closure is used to calculate the actual value during execution.
+    console.log(doubleAll(10));
+}
+
+closure();
+
+// Namespace collision
+favFruit1();
+favFruit2();
+
+// Fake Namespace
+namespace1.favFruit();
+namespace2.favFruit();
+
+// Immediately Invoked Function Expression
+console.log('IIFE');
+namespace3.favFruit();
