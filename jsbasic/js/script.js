@@ -91,9 +91,127 @@ function loops() {
     }
 
     var array = ['A', 'B', 'C'];
-    for a in array {
-        console.log(a);
+    for (a in array) {
+        console.log("Item " + a, ": ", array[a]);
     }
 }
 
 loops();
+
+function objects() {
+    var company = new Object();
+    company.name = "Coursera";
+    company.website = "http://coursera.org";
+    company.ceo = new Object();
+    company.ceo.firstName = "Mark";
+    console.log(company['name']);
+
+    // Object literal notation
+    var facebook = {
+        name: "facebook",
+        ceo: {
+            name: "Mark",
+            favColor: "blue"
+        },
+        1: 'a'
+    };
+
+    console.log(facebook);
+}
+
+objects();
+
+// Functions are First-Class Data Types
+// Functions are objects
+function functions() {
+    function multiply(x, y) {
+        return (x * y);
+    }
+
+    console.log('Multiplication of 5 and 3 :', multiply(3, 5));
+    multiply.version = 2.3;
+    console.log('Multiply function: ', multiply);
+    console.log('Multiply version: ', multiply.version);
+
+    function MultiplyFactory(multiplier) {
+        var myFunc = function(x) {
+            return (x * multiplier);
+        }
+
+        return myFunc;
+    };
+
+    var mul3 = MultiplyFactory(3);
+    console.log("4 times 3: ", mul3(4));
+
+    function doOperation(x, op) {
+        return op(x);
+    }
+
+    console.log('9 times 7: ', doOperation(9, MultiplyFactory(7)));
+
+    // Objects are passed by reference
+    // Other types are passed by value
+    function changeNum(x) {
+        x = 4;
+        console.log("Changed num: ", x);
+    }
+
+    function changeObjNum(z) {
+        z.num = 4;
+        console.log("CHanged obj.num: ", z.num);
+    }
+
+    var obj = {
+        num: 5
+    };
+    console.log('Before function call num: ', obj.num);
+    changeNum(obj.num);
+    console.log('After function call num: ', obj.num);
+
+    console.log('Before function call obj.num: ', obj.num);
+    changeObjNum(obj);
+    console.log('After function call obj.num: ', obj.num);
+}
+
+functions();
+
+function prototype() {
+    // Create object using function constructor
+    function Circle (radius) {
+        this.radius = radius;
+        this.Area = function () {
+            return (Math.PI * Math.pow(this.radius, 2));
+        };
+    }
+
+    Circle.prototype.getArea = function () {
+        return (Math.PI * Math.pow(this.radius, 2));
+    }
+
+    // Multiple circle objects will include same function code
+    var myCircle = new Circle(10);
+    console.log('Circle radius: ', myCircle.radius);
+    console.log('Area: ', myCircle.Area(),
+        ' Prototype are: ', myCircle.getArea());
+
+    var literal = {
+        radius: 10,
+        getArea: function () {
+            console.log(this);
+
+            var increaseRadius = function () {
+                // This points to window object
+                console.log(this);
+                this.radius = 20;
+            }
+            increaseRadius();
+
+            return (Math.PI * Math.pow(this.radius, 2));
+        }
+    }
+
+    console.log('Area:', literal.getArea());
+}
+
+prototype();
