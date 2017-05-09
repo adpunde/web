@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document Object Model</title>
+    <script type="text/javascript">
+        console.log('JS in head tag h1: ', document.getElementById('title'));
+        // DOM loaded but CSS and images are not loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log('JS in head tag h1 (after load): ',
+                document.getElementById('title'));
+        });
+    </script>
+</head>
+<body>
+    <h1 id="title">DOM Manipulation</h1>
+    <p>
+        Hello
+        <input id="name" type="text">
+        <!-- HTML should not include behaviour aspects -->
+        <button onclick="buttonEnterClick();">Enter</button>
+    </p>
+
+    <div id="content"></div>
+    <div id="content2"></div>
+    <div> Co-ordinates: <span id="coordinates"></span></div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
